@@ -6,9 +6,9 @@ filename = 'numeros.json'
 with open(filename, 'r') as f_obj:
     file = json.load(f_obj)
 
-for line in file:
+for lista in file:
     cont = 0
-    for valor in line:
+    for valor in lista:
         for comp in resultado:
             comp = int(comp)
             valor = int(valor)
@@ -17,8 +17,8 @@ for line in file:
     if cont < 4:
         print(f'\t{line} \t= {cont} ')
     elif cont == 4:
-        print(f'\t{line} \t= {cont} (QUADRA!) ')
+        print(f'\t{line} \t= {cont} QUADRA !!!! ')
     elif cont == 5:
-        print(f'\t{line} \t= {cont} (QUINA!) ')
+        print(f'\t{line} \t= {cont} QUINA  !!!!! ')
     elif cont == 6:
-        print(f'\t{line} \t= {cont} (SENA !!!!!!!!!!!!!) ')    
+        print(f'\t{line} \t= {cont} SENA   !!!!!!! ')

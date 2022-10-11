@@ -1,16 +1,16 @@
 # COLETA INFORMACOES DE JOGOS E ADICIONA NO ARQUIVO numeros.json
 import json
 
-lista = []
-lp = 'i'
+lista = []                              # CRIA LISTA VAZIA
+lp = 'i'                                # VARIAVEL PARA VERIACAR SAÍDA
 
-def run(lp,lista):
-    while lp != 'q':
+def run(lp,lista):                      
+    while lp != 'q':                    # ENQUANTO lp DIFERENTE DE q
         jogo = []
         jogo = input('\t- Digite o numero ou "q" para sair: ').split()
-        lista.append(jogo)
-        for sair in jogo:
-            if sair == 'q':
+        lista.append(jogo)              # COPIAR LISTA JOGO PARA LISTA 
+        for sair in jogo:               
+            if sair == 'q':             # VERIFICAR SE HA ALGUMA LETRA q , SE HOUVER SAIR DO PROGRAMA
                 lista.pop()
                 lp = 'q'
 
