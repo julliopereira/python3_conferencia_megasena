@@ -1,0 +1,44 @@
+#!/bin/bash
+
+######################################
+func_voltante() {
+	:
+}
+
+
+
+######################################
+jogo=()
+C=1
+for N in $(cat todos_os_jogos.txt); do 
+	jogo+=( $N )
+	let C++
+	func_voltante
+	#echo -e "${jogo[*]}"
+	if [ $C -eq "7" ];then
+		echo -e "${jogo[*]}"
+		unset jogo[*]
+		C=1			
+	fi	
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#####################################
+exit 0
+
+

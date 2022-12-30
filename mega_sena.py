@@ -16,7 +16,7 @@ def run(lp,lista):
 def json_read(lista):
     filename = 'numeros.json'
     with open(filename, 'w') as f_obj:
-        json.dump(lista, f_obj, indent=1)
+        json.dump(lista, f_obj)
 
     with open(filename, 'r') as f_obj:
         jogos = json.load(f_obj)
@@ -24,6 +24,16 @@ def json_read(lista):
     print(f'\n\n- Os jogos são:')
     for game in jogos:
         print(f'\t{game}')
+
+def todos_os_jogos():
+    filename = 'numeros.json'
+    with open(filename, 'r') as f_obj:
+        jogos = json.load(f_obj)
+
+    print(f'\n\n- Os jogos são:')
+    for game in jogos:
+        print(f'\t{game}')
+
 
 def conferencia(resultado):
     filename = 'numeros.json'
@@ -47,7 +57,12 @@ def conferencia(resultado):
         elif cont == 6:
             print(f'\t{list} \t= {cont} SENA   !!!!!!! ')
 
-menu = int(input('[1] Adicionar os jogos/apostas \n[2] Conferir resultado \n\nOpção:  '))
+print('[1] Adicionar os jogos/apostas')
+print('[2] Conferir resultado')
+print('[3] Ver todos os jogos')
+print('[4] Sair')
+menu = int(input('\n\nOpcao: '))
+#menu = int(input('[1] Adicionar os jogos/apostas \n[2] Conferir resultado\n[3] Sair \n\nOpção:  '))
 if menu == 1:
     print('\n\n')
     run(lp,lista)
@@ -55,7 +70,12 @@ if menu == 1:
 elif menu == 2:
     print('\n\n')
     resultado = input('\nDigite o resultado da mega sena com espaços: ').split()
+    print('\n\n')
     conferencia(resultado)
+elif menu == 3:
+    todos_os_jogos()
+elif menu == 4:
+    print('\n\nSaindo ...')
 else:
     print('\n\nDigitou número errado !!!')
 
